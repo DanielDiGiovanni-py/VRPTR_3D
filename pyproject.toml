@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vrptr"
+version = "0.1.0"
+description = "Individual language-map prediction and uncertainty from resting-state fMRI"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name = "Daniel A. Di Giovanni"}, {name = "D. Louis Collins"}]
+dependencies = ["numpy", "scipy", "pandas", "torch", "nibabel", "matplotlib"]
+
+[project.optional-dependencies]
+preprocessing = ["nilearn", "scikit-learn", "nipype"]
+test = ["pytest"]
+
+[tool.setuptools.packages.find]
+include = ["vrptr_clinical*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
